@@ -27,6 +27,7 @@ $draftail-editor-font-family: $FONT_FAMILY_SANS;
 
 // TODO Fix deprecation warning from node-sass, without breaking the source order.
 @import '../node_modules/draft-js/dist/Draft';
+@import '../node_modules/draft-js-hashtag-plugin/lib/plugin';
 @import '../lib/index';
 
 @import './components/editor';

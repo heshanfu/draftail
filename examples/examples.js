@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import createHashtagPlugin from 'draft-js-hashtag-plugin';
 
 import {
     INLINE_CONTROL,
@@ -68,6 +69,8 @@ const initWagtail = () => {
 };
 
 const initCustom = () => {
+    const hashtagPlugin = createHashtagPlugin();
+
     const editor = (
         <EditorWrapper
             id="custom"
@@ -95,6 +98,7 @@ const initCustom = () => {
             entityTypes={[ENTITY_CONTROL.EMBED, ENTITY_CONTROL.DOCUMENT]}
             decorators={[new PrismDecorator({ defaultLanguage: 'css' })]}
             controls={[ReadingTime]}
+            plugins={[hashtagPlugin]}
         />
     );
 
