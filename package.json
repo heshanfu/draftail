@@ -68,7 +68,13 @@
     }
   },
   "eslintConfig": {
-    "extends": "plugin:springload/prettier"
+    "extends": [
+      "plugin:springload/prettier",
+      "plugin:compat/recommended"
+    ],
+    "settings": {
+      "polyfills": ["promises"]
+    }
   },
   "stylelint": {
     "extends": [
@@ -115,9 +121,18 @@
           ]
         }
       ],
-      "plugin/no-unsupported-browser-features": [true, {
-        "ignore": ["user-select-none", "css3-cursors", "viewport-units", "outline", "css-appearance"]
-      }]
+      "plugin/no-unsupported-browser-features": [
+        true,
+        {
+          "ignore": [
+            "user-select-none",
+            "css3-cursors",
+            "viewport-units",
+            "outline",
+            "css-appearance"
+          ]
+        }
+      ]
     }
   },
   "jest": {
@@ -165,6 +180,7 @@
     "enzyme-adapter-react-16": "^1.1.0",
     "enzyme-to-json": "^3.2.2",
     "eslint": "^3.19.0",
+    "eslint-plugin-compat": "^2.5.1",
     "eslint-plugin-springload": "^2.2.0",
     "express": "^4.15.5",
     "extract-text-webpack-plugin": "^3.0.0",
